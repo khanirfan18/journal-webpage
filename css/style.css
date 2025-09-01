@@ -1,0 +1,233 @@
+/* =========================
+   HEAD / GLOBAL STYLES
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: #202020;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-weight: 650;
+  font-size: 15px;
+}
+
+li {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+img {
+  width: 25px;
+  display: block;
+}
+
+/* =========================
+   NAV / HEADER
+========================= */
+nav {
+  grid-area: Z;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5vh;
+  padding-top: 1em;
+  padding-bottom: 0.2em;
+}
+
+.logo-text {
+  display: flex;
+}
+
+.nav-logo-text {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-left: 1em;
+  gap: 3px;
+}
+
+.nav-text {
+  margin-right: 1em;
+}
+
+.logo {
+  width: 25px;
+}
+
+/* =========================
+   BODY / MAIN CONTENT
+========================= */
+.box-1 {
+  padding-top: 4em;
+  grid-area: A;
+  background: yellow url(/images/background.png);
+  background-position: bottom;
+  background-size: cover;
+  color: whitesmoke;
+  display: flex;
+}
+
+.box-1 h3 {
+  font-size: 4.5vw;
+}
+
+.box-1 p {
+  font-size: 2.5vw;
+}
+
+.box-2 { grid-area: B; margin-top: 1em; }
+.box-3 { grid-area: C; }
+.box-4 { grid-area: D; }
+.box-5 { grid-area: G; display: none; }
+.box-6 { grid-area: H; display: none; }
+.box-7 { grid-area: I; display: none; }
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-gap: 10px;
+  grid-template-areas: 
+    "Z Z Z Z Z Z Z Z Z Z Z Z"
+    "A A A A A A A A A A A A"
+    ". B B B B B B B B B B ."
+    ". C C C C C C C C C C ."
+    ". D D D D D D D D D D ."
+    "E E E E E E E E E E E E"
+    "F F F F F F F F F F F F";
+}
+
+.content {
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 0.7em;
+  text-shadow: 0 2 5px whitesmoke;
+  gap: 1.5em;
+}
+
+.contents {
+  padding-left: 0.2em;
+}
+
+.content h3 { font-size: 2.5rem; }
+
+.text {
+  font-size: 1rem;
+  line-height: 1.2;
+  padding-bottom: 0.9em;
+}
+
+.date {
+  text-transform: uppercase;
+}
+
+.blog-img {
+  display: block;
+  width: 90vw;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+/* NEXT PAGE SECTION */
+.nextpage {
+  grid-area: E;
+  text-align: center;
+  font-weight: 700;
+}
+
+.nextpage a {
+  color: black;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  grid-area: F;
+  color: #ECECEC;
+  background-color: #202020;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .p-one {
+  font-size: 0.8rem;
+  padding-bottom: 0.4em;
+  font-weight: 700;
+}
+
+footer .p-two {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+/* =========================
+   MEDIA QUERIES / DESKTOP
+========================= */
+@media (min-width: 1024px) {
+  .container {
+    display: grid;
+    height: 100vh;
+    grid-gap: 20px;
+    grid-template-areas: 
+      "Z Z Z Z Z Z Z Z Z Z Z Z"
+      "A A A A A A A A A A A A"
+      "B B C C C C D D D D D D"
+      "G G H H H H I I I I I I"
+      "E E E E E E E E E E E E"
+      "F F F F F F F F F F F F";
+  }
+
+  .box-2, .box-3, .box-4,
+  .box-5, .box-6, .box-7 {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .blog-img {
+    width: 85%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 8px;
+    display: flex;
+    justify-content: left;
+  }
+
+  .content {
+    padding: 1.5em;
+    width: 30vw;
+  }
+
+  .contents {
+    padding-left: 1.1em;
+    width: 90vw;
+    gap: 5em;
+  }
+
+  .box-1 {
+    height: 100vh;
+    background-position: center bottom;
+    padding-top: 22rem;
+  }
+}

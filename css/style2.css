@@ -1,0 +1,232 @@
+/* =========================
+   HEAD / GLOBAL STYLES
+========================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: #202020;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1em;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-weight: 650;
+    font-size: 15px;
+}
+
+li {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+img {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding-bottom: 1em;
+}
+
+/* =========================
+   NAV / HEADER
+========================= */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    grid-area: H;
+}
+
+.logo-text {
+    display: flex;
+}
+
+.nav-logo-text {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-left: 1em;
+    gap: 3px;
+}
+
+.nav-text {
+    margin-right: 1em;
+}
+
+.logo {
+    width: 25px;
+}
+
+/* =========================
+   BODY / MAIN CONTENT
+========================= */
+.box-1 {
+    padding-top: 2em;
+    padding-left: 1em;
+    grid-area: A;
+    background-position: bottom;
+    background-size: cover;
+    color: black;
+    display: flex;
+}
+
+.content:not(.box-5, .box-6, .box-7) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-shadow: 0 2 5px whitesmoke;
+    gap: 1.5em;
+}
+
+.content .big-h3 {
+    font-size: 2.5rem;
+}
+
+.content h3 {
+    font-size: 1.3rem;
+}
+
+.content p {
+    font-size: 1.2rem;
+}
+
+.box-2 {
+    grid-area: B;
+    background-image: url(/images/background.png);
+    width: 100%;
+    height: 90vh;
+    justify-items: center;
+    background-size: cover;
+    background-position: right bottom;
+}
+
+.box-3 {
+    grid-area: C;
+}
+
+.box-5 {
+    grid-area: E;
+    display: none;
+}
+
+.box-6 {
+    grid-area: F;
+    display: none;
+}
+
+.box-7 {
+    grid-area: G;
+    display: none;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    grid-gap: 10px;
+    grid-template-areas: 
+        "A A A A A A A A A A A A"
+        "B B B B B B B B B B B B"
+        ". C C C C C C C C C C ."
+        "E E E E E E E E E E E E"
+        "F F F F F F F F F F F F"
+        "G G G G G G G G G G G G"
+        "H H H H H H H H H H H H";
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    grid-area: H;
+    color: #ECECEC;
+    background-color: #202020;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .p-one {
+    font-size: 0.8rem;
+    padding-bottom: 0.4em;
+    font-weight: 700;
+}
+
+footer .p-two {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+/* =========================
+   MEDIA QUERIES
+========================= */
+@media (min-width: 1024px) {
+    .box-5, .box-6, .box-7 {
+        display: flex;
+        padding-left: 10px;
+        width: 70%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .box-5 {
+        padding-left: 5vw;
+        margin-left: 0;
+    }
+
+    .box-5 .content, .box-6 .content, .box-7 .content {
+        width: 30vw;
+    }
+
+    .box-5 img, .box-6 img, .box-7 img {
+        width: 100%;
+        height: 40%;
+    }
+
+    .container {
+        grid-template-areas: 
+            "A A A A A A A A A A A A"
+            "B B B B B B B B B B B B"
+            "C C C C C C C C C C C ."
+            "E E E E F F F F G G G G"
+            "H H H H H H H H H H H H";
+    }
+
+    img {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 5px;
+    }
+
+    .content .big-h3 {
+        font-size: 2.5rem;
+    }
+
+    .content h3 {
+        font-size: 2.3rem;
+    }
+
+    .content p {
+        font-size: 1.2rem;
+    }
+
+    .padding {
+        padding-left: 4em;
+    }
+}
